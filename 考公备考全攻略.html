@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 考公全攻略 | 福建大学生专属备考指南</title>
+<style>
+  :root {
+    --primary: #1a56db;
+    --primary-light: #e8f0fe;
+    --accent: #e02424;
+    --gold: #f59e0b;
+    --green: #059669;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── Navigation ── */
+  .topnav {
+    position: sticky; top:0; z-index:100;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    display: flex; align-items: center; gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .topnav a {
+    display: inline-block; padding: 14px 16px;
+    font-size: 14px; font-weight: 500;
+    color: var(--text-secondary); text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+  }
+  .topnav a:hover, .topnav a.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 40%, #1a56db 100%);
+    color: #fff;
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset:0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 13px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .hero h1 .hl { color: #fbbf24; }
+  .hero .subtitle {
+    font-size: 17px; opacity: .85;
+    max-width: 600px; margin: 0 auto 32px;
+  }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;
+    margin-top: 8px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num { font-size: 36px; font-weight: 800; color: #fbbf24; }
+  .hero-stat .lbl { font-size: 13px; opacity: .7; margin-top: 4px; }
+
+  /* ── Container ── */
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 56px 0; }
+  .section-title {
+    font-size: 26px; font-weight: 700;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title .icon { font-size: 28px; }
+  .section-desc { color: var(--text-secondary); margin-bottom: 32px; font-size: 15px; }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+    transition: box-shadow .2s;
+  }
+  .card:hover { box-shadow: var(--shadow-lg); }
+  .card h3 { font-size: 17px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+
+  /* ── Grid ── */
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+  /* ── Tags ── */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 12px; font-weight: 600;
+  }
+  .tag-red { background: #fde8e8; color: #c81e1e; }
+  .tag-orange { background: #fef3c7; color: #b45309; }
+  .tag-green { background: #d1fae5; color: #065f46; }
+  .tag-blue { background: #dbeafe; color: #1e40af; }
+  .tag-purple { background: #ede9fe; color: #6d28d9; }
+
+  /* ── Timeline ── */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute; left: 13px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary), var(--border));
+  }
+  .tl-item { position: relative; margin-bottom: 28px; }
+  .tl-item::before {
+    content: '';
+    position: absolute; left: -22px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--primary-light);
+  }
+  .tl-date { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 4px; }
+  .tl-title { font-weight: 600; font-size: 16px; }
+
+  /* ── Table ── */
+  .table-wrap { overflow-x: auto; margin: 16px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { background: #f1f5f9; font-weight: 600; font-size: 13px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .5px; }
+  tr:hover td { background: #fafbfc; }
+
+  /* ── Progress Bar ── */
+  .progress-bar {
+    height: 8px; background: #e2e8f0; border-radius: 10px;
+    overflow: hidden; margin-top: 6px;
+  }
+  .progress-fill {
+    height: 100%; border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), #7c3aed);
+    transition: width 1s ease;
+  }
+
+  /* ── Accordion ── */
+  .accordion { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .acc-header {
+    padding: 16px 20px; background: #f8fafc;
+    font-weight: 600; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    user-select: none;
+    transition: background .2s;
+  }
+  .acc-header:hover { background: #f1f5f9; }
+  .acc-header::after { content: '▾'; font-size: 14px; transition: transform .3s; color: var(--text-secondary); }
+  .acc-open .acc-header::after { transform: rotate(180deg); }
+  .acc-body { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+  .acc-body-inner { padding: 0 20px 20px; }
+
+  /* ── Callout ── */
+  .callout {
+    border-left: 4px solid var(--primary);
+    background: var(--primary-light);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 16px 20px; margin: 16px 0;
+    font-size: 14px;
+  }
+  .callout-warn { border-left-color: var(--accent); background: #fef2f2; }
+  .callout-tip { border-left-color: var(--green); background: #ecfdf5; }
+  .callout-gold { border-left-color: var(--gold); background: #fffbeb; }
+
+  /* ── Phase Cards ── */
+  .phase-card {
+    border-radius: var(--radius);
+    padding: 24px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .phase-1 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+  .phase-2 { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+  .phase-3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .phase-num {
+    position: absolute; right: 20px; top: 12px;
+    font-size: 64px; font-weight: 900; opacity: .15;
+  }
+  .phase-card h3 { font-size: 20px; margin-bottom: 8px; }
+  .phase-card ul { list-style: none; font-size: 14px; opacity: .92; }
+  .phase-card ul li { padding: 4px 0; }
+  .phase-card ul li::before { content: '✓ '; margin-right: 4px; }
+
+  /* ── Back to top ── */
+  .btt {
+    position: fixed; bottom: 30px; right: 30px;
+    width: 44px; height: 44px;
+    background: var(--primary); color: #fff;
+    border: none; border-radius: 50%;
+    font-size: 20px; cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0; transform: translateY(20px);
+    transition: all .3s;
+    z-index: 99;
+  }
+  .btt.show { opacity: 1; transform: translateY(0); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center; padding: 40px 24px;
+    color: var(--text-secondary); font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .hero { padding: 40px 16px 60px; }
+    .hero-stats { gap: 16px; }
+    .hero-stat .num { font-size: 26px; }
+    section { padding: 36px 0; }
+    .topnav a { padding: 12px 10px; font-size: 13px; }
+  }
+
+  /* ── Print ── */
+  @media print {
+    .topnav, .btt { display: none; }
+    .hero { background: #fff; color: #000; padding: 20px 0; }
+    .hero h1 { font-size: 24px; }
+  }
+
+  /* ── Countdown ── */
+  .countdown-box {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  .cd-item {
+    background: rgba(255,255,255,.1);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    text-align: center;
+    min-width: 80px;
+  }
+  .cd-item .cd-num { font-size: 28px; font-weight: 800; }
+  .cd-item .cd-lbl { font-size: 12px; opacity: .7; margin-top: 2px; }
+</style>
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav class="topnav" id="topnav">
+  <a href="#hero" class="active">🏠 首页</a>
+  <a href="#profile">👨‍💻 我的画像</a>
+  <a href="#overview">📋 考试总览</a>
+  <a href="#schedule">📅 时间线</a>
+  <a href="#posts">🎯 岗位分析</a>
+  <a href="#bigdata-posts">💻 专业岗位</a>
+  <a href="#private-college">🎓 民办策略</a>
+  <a href="#plan">📖 备考计划</a>
+  <a href="#xince">📝 行测攻略</a>
+  <a href="#shenlun">✍️ 申论攻略</a>
+  <a href="#interview">🎤 面试技巧</a>
+  <a href="#resources">📚 资料推荐</a>
+  <a href="#daily">✅ 每日打卡</a>
+</nav>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-badge">🇨🇳 福建大学生专属 · 2026最新版</div>
+  <h1>考公上岸 <span class="hl">全攻略</span></h1>
+  <p class="subtitle">整合国考 + 福建省考最新政策、岗位数据、备考路线<br>专为福建在校大学生量身打造</p>
+  <!-- 实时倒计时 -->
+  <div class="countdown-box" style="margin:8px 0 24px">
+    <div class="cd-item" id="cd-guokao">
+      <div class="cd-num" id="cd-gk-days">--</div>
+      <div class="cd-lbl">距2027国考笔试<br>(预计2026.11.29)</div>
+    </div>
+    <div class="cd-item" style="border:2px solid #fbbf24">
+      <div class="cd-num" id="cd-shengkao-days" style="color:#fbbf24">--</div>
+      <div class="cd-lbl">距2027福建省考笔试<br>(预计2027.3.14)</div>
+    </div>
+    <div class="cd-item">
+      <div class="cd-num" id="cd-summer-days">--</div>
+      <div class="cd-lbl">距暑假开始<br>(黄金备考期)</div>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">3.81<span style="font-size:20px">万</span></div><div class="lbl">2026国考招录</div></div>
+    <div class="hero-stat"><div class="num">4,723</div><div class="lbl">2026福建省考招录</div></div>
+    <div class="hero-stat"><div class="num">67<span style="font-size:20px">%</span></div><div class="lbl">国考应届生占比</div></div>
+    <div class="hero-stat"><div class="num">98<span style="font-size:20px">:1</span></div><div class="lbl">国考平均竞争比</div></div>
+  </div>
+</section>
+
+<!-- ════════════ 个人专属画像 ════════════ -->
+<div class="container">
+<section id="profile" style="margin-top:-40px;position:relative;z-index:10">
+  <div class="card" style="border-left:4px solid var(--primary);padding:28px 32px">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+      <div style="font-size:40px">👨‍💻</div>
+      <div>
+        <h2 style="font-size:22px;margin:0">你的专属考公画像</h2>
+        <p style="color:var(--text-secondary);font-size:14px;margin:0">基于你的背景量身定制的最优策略</p>
+      </div>
+    </div>
+    <div class="grid-3" style="margin-top:16px">
+      <div style="text-align:center;padding:16px;background:#f0f9ff;border-radius:var(--radius-sm)">
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px">🎓 学历背景</div>
+        <div style="font-weight:700;font-size:16px;color:var(--primary)">民办本科</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">笔试公平竞争 · 面试双盲</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:#f0fdf4;border-radius:var(--radius-sm)">
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px">📊 专业</div>
+        <div style="font-weight:700;font-size:16px;color:var(--green)">大数据</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">计算机类 · 岗位壁垒强</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:#fefce8;border-radius:var(--radius-sm)">
+        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px">👤 性别</div>
+        <div style="font-weight:700;font-size:16px;color:var(--gold)">男生</div>
+        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px">限男性岗竞争直接减半</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top:20px">
+      <div>
+        <h4 style="color:var(--green);margin-bottom:8px">✅ 你的独特优势</h4>
+        <ul style="font-size:14px;list-style:none">
+          <li>✅ <b>专业硬壁垒</b>：大数据=计算机类，可报统计局/大数据局/税务/公安技术岗，天然筛掉文科大军</li>
+          <li>✅ <b>性别红利</b>："限男性"岗位竞争比普遍仅10-20:1（如公安技术、基层执法）</li>
+          <li>✅ <b>时间窗口</b>：大三下开始，5个月全力冲刺国考刚刚好（基础够用+冲劲十足）</li>
+          <li>✅ <b>双线作战</b>：国考(11月)+省考(3月)，时间完全不冲突，两次上岸机会</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px">⚠️ 需要克服的挑战</h4>
+        <ul style="font-size:14px;list-style:none">
+          <li>⚠️ <b>学校标签</b>：少数中央部委岗简历筛选可能吃亏→<b>策略：报省级及以下岗位</b></li>
+          <li>⚠️ <b>起步偏晚</b>：未从大二开始积累→<b>对策：压缩基础阶段，直接跟粉笔980倍速过</b></li>
+          <li>⚠️ <b>申论弱项</b>：理科生普遍申论偏弱→<b>对策：从现在起每天30分钟申论素材积累</b></li>
+          <li>⚠️ <b>自制力挑战</b>：暑期在家容易松懈→<b>对策：去自习室/图书馆，加入线上打卡群</b></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:20px;padding:16px;background:linear-gradient(135deg,#1a56db,#1e40af);border-radius:var(--radius-sm);color:#fff;text-align:center">
+      <div style="font-size:14px;opacity:.85;margin-bottom:4px">🏆 上岸综合评估</div>
+      <div style="font-size:28px;font-weight:800">选对岗位 → 竞争可压至 <span style="color:#fbbf24">15-25:1</span></div>
+      <div style="font-size:13px;opacity:.75;margin-top:4px">远低于平均 98:1——策略正确比拼命刷题更重要</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ════════════ 考试总览 ════════════ -->
+<div class="container">
+<section id="overview">
+  <div class="section-title"><span class="icon">📋</span> 考试总览</div>
+  <p class="section-desc">国考与福建省考核心对比 —— 两手准备，双重保障</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🇨🇳 国家公务员考试（国考）</h3>
+      <table>
+        <tr><td style="width:80px;font-weight:600">招录规模</td><td>2026年计划招录 <b>38,119人</b>，20,714个职位</td></tr>
+        <tr><td>公告发布</td><td>2025年10月14日</td></tr>
+        <tr><td>报名时间</td><td>2025年10月15日—24日</td></tr>
+        <tr><td>笔试时间</td><td><b>2025年11月29日—30日</b></td></tr>
+        <tr><td>成绩公布</td><td>2026年1月</td></tr>
+        <tr><td>年龄限制</td><td>18-38周岁，应届硕博 <b style="color:var(--accent)">放宽至43岁</b></td></tr>
+        <tr><td>应届优势</td><td><span class="tag tag-red">67%岗位限应届</span> 约2.6万个计划</td></tr>
+        <tr><td>考试科目</td><td>行测 + 申论 + 专业科目（部分岗位）</td></tr>
+        <tr><td>报名网站</td><td>bm.scs.gov.cn/kl2026</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🏛️ 福建省公务员考试（省考）</h3>
+      <table>
+        <tr><td style="width:80px;font-weight:600">招录规模</td><td>2026年计划招录 <b>4,723人</b></td></tr>
+        <tr><td>公告发布</td><td>2026年1月16日</td></tr>
+        <tr><td>报名时间</td><td>2026年1月19日—23日</td></tr>
+        <tr><td>笔试时间</td><td><b>2026年3月14日—15日</b></td></tr>
+        <tr><td>成绩公布</td><td>2026年4月上旬</td></tr>
+        <tr><td>面试时间</td><td>2026年4月中旬</td></tr>
+        <tr><td>应届优势</td><td><span class="tag tag-orange">23%应届专项岗</span> 约1,076个名额</td></tr>
+        <tr><td>考试科目</td><td>行测(120题/120分钟) + 申论(180分钟,A/B卷)</td></tr>
+        <tr><td>报名网站</td><td>gwykl.fujian.gov.cn</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout callout-gold">
+    <strong>💡 关键区别：</strong>
+    国考岗位遍布全国（福建也有大量岗位），省考岗位均在福建省内。
+    <b>建议两手准备</b> —— 国考笔试在前（11月），省考笔试在后（次年3月），时间完全不冲突。
+    国考可作"练兵"，省考是福建本地学子的主战场。
+  </div>
+</section>
+
+<!-- ════════════ 时间线 ════════════ -->
+<section id="schedule">
+  <div class="section-title"><span class="icon">📅</span> 2026考试时间线</div>
+  <p class="section-desc">一份清晰的时间轴，不错过任何关键节点</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🇨🇳 国考时间线</h3>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-date">2025年10月14日</div><div class="tl-title">公告发布</div>职位表同步发布</div>
+        <div class="tl-item"><div class="tl-date">10月15日—24日</div><div class="tl-title">网上报名</div>共10天，建议提前2天完成</div>
+        <div class="tl-item"><div class="tl-date">11月1日—6日</div><div class="tl-title">报名确认+缴费</div>上传照片、选择考点城市</div>
+        <div class="tl-item"><div class="tl-date">11月24日—30日</div><div class="tl-title">打印准考证</div></div>
+        <div class="tl-item"><div class="tl-date">11月29日—30日</div><div class="tl-title"><b>笔试</b></div>29日专业科目，30日行测+申论</div>
+        <div class="tl-item"><div class="tl-date">2026年1月</div><div class="tl-title">成绩公布</div>同步发布面试名单</div>
+        <div class="tl-item"><div class="tl-date">2026年2-3月</div><div class="tl-title">面试</div>各单位自行组织</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🏛️ 福建省考时间线</h3>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-date">2026年1月16日</div><div class="tl-title">公告发布</div>招录4723人</div>
+        <div class="tl-item"><div class="tl-date">1月19日—23日</div><div class="tl-title">网上报名</div><span class="tag tag-green">免报名费</span> 需闽政通L4认证</div>
+        <div class="tl-item"><div class="tl-date">1月29日—30日</div><div class="tl-title"><b>笔试确认</b></div>⚠️ 不确认=放弃资格！</div>
+        <div class="tl-item"><div class="tl-date">3月6日起</div><div class="tl-title">打印准考证</div></div>
+        <div class="tl-item"><div class="tl-date">3月14日—15日</div><div class="tl-title"><b>笔试</b></div>14日行测+申论，15日公安专业</div>
+        <div class="tl-item"><div class="tl-date">4月上旬</div><div class="tl-title">成绩公布</div>1:3比例确定面试人选</div>
+        <div class="tl-item"><div class="tl-date">4月中旬</div><div class="tl-title">面试</div>全省统一结构化面试</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-warn">
+    <strong>⚠️ 福建省考特殊提醒：</strong>
+    报名免费但必须完成"笔试确认"步骤（1月29日-30日），逾期未确认视为放弃。
+    考试地点在确认后不可修改。需提前下载闽政通APP并通过L4级实名认证。
+  </div>
+</section>
+
+<!-- ════════════ 岗位分析 ════════════ -->
+<section id="posts">
+  <div class="section-title"><span class="icon">🎯</span> 福建省岗位竞争分析</div>
+  <p class="section-desc">选岗比备考更重要 —— 用好应届生身份是最大优势</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>🔴 高竞争区（>100:1）</h3>
+      <table>
+        <tr><td>厦门</td><td><b>144:1</b></td><td><span class="tag tag-red">全省最卷</span></td></tr>
+        <tr><td>福州鼓楼/仓山</td><td>87:1</td><td>文字综合岗300+:1</td></tr>
+        <tr><td>泉州鲤城/晋江</td><td>76:1</td><td>三不限岗500+:1</td></tr>
+      </table>
+      <div class="callout callout-warn" style="margin-top:12px;font-size:13px">
+        笔试模拟未达<b>140分</b>，建议转投漳州/莆田/宁德
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🟠 中竞争区（50-100:1）</h3>
+      <table>
+        <tr><td>福州其他市辖区</td><td>50-80:1</td></tr>
+        <tr><td>莆田城厢/荔城</td><td>50-70:1</td></tr>
+        <tr><td>漳州芗城区</td><td>55-75:1</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🟢 低竞争区（<20:1）</h3>
+      <table>
+        <tr><td>南平山区县</td><td>6-15:1</td></tr>
+        <tr><td>三明山区县</td><td>6-15:1</td></tr>
+        <tr><td>龙岩山区县</td><td>8-18:1</td></tr>
+        <tr><td>宁德山区县</td><td>8-18:1</td></tr>
+      </table>
+      <div class="callout callout-tip" style="margin-top:12px;font-size:13px">
+        "限男性+本县户籍+5年服务期"最低仅<b>6:1</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h3>🏆 应届生选岗策略 —— 锁定你的专属优势</h3>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4 style="color:var(--green);margin-bottom:8px">✅ 优先选择</h4>
+        <ul style="list-style:none;font-size:14px">
+          <li>✅ "限2026届+专业限+性别限" <b>三限组合</b>（竞争可压至10:1以内）</li>
+          <li>✅ 南平/三明/龙岩/宁德山区县岗位</li>
+          <li>✅ 税务系统岗位（国考招录大户，占65.6%）</li>
+          <li>✅ 基层服务项目特设岗（普遍<10:1）</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent);margin-bottom:8px">❌ 谨慎避开</h4>
+        <ul style="list-style:none;font-size:14px">
+          <li>❌ "三不限"岗位（不限专业/不限经验/不限户籍）→ 竞争比可破1500:1</li>
+          <li>❌ "亦允许2024、2025届"的岗位 → 往届生涌入，竞争翻倍</li>
+          <li>❌ 厦门/福州热门区纯应届岗 → 985扎堆，平均81:1</li>
+          <li>❌ 仅招1人的岗位 → 容错率极低</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📊 福建各地市竞争比排行（2025实际数据）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>地区</th><th>平均竞争比</th><th>应届岗竞争比</th><th>难度评级</th><th>建议</th></tr></thead>
+        <tbody>
+          <tr><td>厦门</td><td><b>144:1</b></td><td>81:1</td><td>⭐⭐⭐⭐⭐</td><td>笔试目标145+</td></tr>
+          <tr><td>福州</td><td><b>87:1</b></td><td>55:1</td><td>⭐⭐⭐⭐</td><td>笔试目标140+</td></tr>
+          <tr><td>泉州</td><td><b>76:1</b></td><td>48:1</td><td>⭐⭐⭐⭐</td><td>笔试目标138+</td></tr>
+          <tr><td>莆田</td><td>55:1</td><td>32:1</td><td>⭐⭐⭐</td><td>性价比之选</td></tr>
+          <tr><td>漳州</td><td>50:1</td><td>30:1</td><td>⭐⭐⭐</td><td>性价比之选</td></tr>
+          <tr><td>龙岩</td><td>38:1</td><td>22:1</td><td>⭐⭐</td><td>推荐报考</td></tr>
+          <tr><td>宁德</td><td>35:1</td><td>20:1</td><td>⭐⭐</td><td>推荐报考</td></tr>
+          <tr><td>三明</td><td>30:1</td><td>18:1</td><td>⭐</td><td>稳妥选择</td></tr>
+          <tr><td>南平</td><td>28:1</td><td>16:1</td><td>⭐</td><td>上岸率高</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 大数据专业专属岗位 ════════════ -->
+<section id="bigdata-posts">
+  <div class="section-title"><span class="icon">💻</span> 大数据专业 · 专属可报岗位</div>
+  <p class="section-desc">用专业壁垒构建竞争护城河——你的专业 = 天然的竞争过滤器</p>
+
+  <div class="card">
+    <h3>🎯 国考中大数据/计算机类可报岗位（2026参考）</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>系统/部门</th><th>典型岗位</th><th>专业要求</th><th>预估竞争比</th><th>推荐指数</th></tr></thead>
+        <tbody>
+          <tr><td>🏦 <b>税务系统</b></td><td>税务稽查/数据分析岗</td><td>计算机类/统计学类</td><td>20-35:1</td><td>⭐⭐⭐⭐⭐</td></tr>
+          <tr><td>📊 <b>国家统计局</b></td><td>统计调查/数据处理岗</td><td>计算机类/数学类</td><td>15-25:1</td><td>⭐⭐⭐⭐⭐</td></tr>
+          <tr><td>🌐 <b>网信办/大数据局</b></td><td>网络安全管理/数据分析</td><td>计算机类/大数据</td><td>18-28:1</td><td>⭐⭐⭐⭐⭐</td></tr>
+          <tr><td>🚔 <b>公安技术岗</b></td><td>信息通信/网络侦查</td><td>计算机类+限男性</td><td>10-18:1</td><td>⭐⭐⭐⭐⭐</td></tr>
+          <tr><td>🏛️ <b>人社/医保局</b></td><td>信息系统管理</td><td>计算机类</td><td>25-40:1</td><td>⭐⭐⭐⭐</td></tr>
+          <tr><td>📈 <b>发改委/工信局</b></td><td>经济运行分析/信息化</td><td>计算机类/经济类</td><td>30-50:1</td><td>⭐⭐⭐⭐</td></tr>
+          <tr><td>🏗️ <b>市场监管/海关</b></td><td>电子取证/数据分析</td><td>计算机类</td><td>25-40:1</td><td>⭐⭐⭐</td></tr>
+          <tr><td>💻 <b>银保监/证监</b></td><td>科技监管岗</td><td>计算机类（需加试专业）</td><td>15-25:1</td><td>⭐⭐⭐</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-tip" style="margin-top:12px">
+      <strong>💡 关键发现：</strong>你的大数据专业属于<b>计算机类</b>（可报绝大多数计算机岗）和<b>统计学类</b>（部分岗位）。
+      这意味着你在国考中可以报考约 <b>25%-30%</b> 的岗位（远高于不限专业的竞争烈度）。
+      加上"限男性"条件后，竞争比可进一步降到 <b>10-20:1</b>。
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h3>🏛️ 福建省考中大数据可报岗位</h3>
+    <div class="grid-2" style="margin-top:12px">
+      <div>
+        <h4 style="color:var(--primary);margin-bottom:8px">省直/市直单位</h4>
+        <ul style="font-size:14px">
+          <li><b>福建省大数据管理局</b>（对口！）</li>
+          <li>省统计局/各市统计局</li>
+          <li>省公安厅/各市公安局技术岗</li>
+          <li>省工信厅信息化推进处</li>
+          <li>数字福建建设领导小组办公室</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--green);margin-bottom:8px">县区级单位（推荐主攻）</h4>
+        <ul style="font-size:14px">
+          <li>各区县统计局/调查队</li>
+          <li>各区县公安局网安/技侦大队</li>
+          <li>各区县大数据中心/信息中心</li>
+          <li>各乡镇信息化管理岗</li>
+          <li>各区县税务局（计算机岗）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout callout-gold" style="margin-top:12px">
+      <strong>🎯 最优策略：</strong>省考中优先搜索"计算机类"+"限男性"+"限2026应届"的岗位组合。
+      以2025年福建省考数据为参考，此类组合在南平/三明/龙岩的竞争比最低可至 <b>6:1</b>。
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 民办本科专项策略 ════════════ -->
+<section id="private-college">
+  <div class="section-title"><span class="icon">🎓</span> 民办本科 · 考公生存法则</div>
+  <p class="section-desc">正视现实，但不妄自菲薄——笔试面前人人平等，策略得当照样上岸</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🔍 民办本科考公三大真相</h3>
+      <div style="font-size:14px;margin-top:12px">
+        <div class="callout callout-tip">
+          <strong>✅ 真相一：笔试完全公平</strong><br>
+          行测+申论由机器阅卷+双盲评分，阅卷老师看不到你的学校。
+          你的分数就是你的实力，与985/211考生在同一张卷子上公平竞争。
+        </div>
+        <div class="callout">
+          <strong>✅ 真相二：面试也是双盲</strong><br>
+          福建省考结构化面试：考官随机抽取、考生随机编号，双方互不知晓背景。
+          考官只知道"X号考生"，不知道你的学校。你的表现就是你的学校。
+        </div>
+        <div class="callout callout-warn">
+          <strong>⚠️ 真相三：部分岗位确有隐形门槛</strong><br>
+          少数中央部委、省直核心岗在政审/考察环节可能偏向名校。
+          <b>对策：主攻市县级岗位，避开"神仙打架"区。</b>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ 民办本科上岸五条铁律</h3>
+      <ol style="font-size:14px;margin-top:12px;line-height:2">
+        <li><b>主攻地市级及以下岗位</b>——县级单位最不看学历，就看分数</li>
+        <li><b>避免"仅限双一流"岗</b>——职位表里有明确标注的岗位直接跳过</li>
+        <li><b>用好应届生身份</b>——这是你最大的"身份保护伞"，签三方务必谨慎</li>
+        <li><b>笔试目标定高5-10分</b>——用分数碾压学历差距，笔试140+让你无可争议</li>
+        <li><b>面试准备要更充分</b>——结构化面试是你的翻盘点，多模拟多练习</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px;background:linear-gradient(135deg,#f0f9ff,#e8f0fe);border-color:var(--primary)">
+    <h3>📊 民办本科 vs 公办本科：考公差异对照表</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>环节</th><th>民办本科影响</th><th>应对策略</th></tr></thead>
+        <tbody>
+          <tr><td>网上报名</td><td><span class="tag tag-green">无影响</span></td><td>正常填报，学历认证通过即可</td></tr>
+          <tr><td>笔试</td><td><span class="tag tag-green">完全无影响</span></td><td>机器阅卷+双盲，分数是硬道理</td></tr>
+          <tr><td>资格复审</td><td><span class="tag tag-green">无影响</span></td><td>国民教育序列本科均可</td></tr>
+          <tr><td>面试（结构化）</td><td><span class="tag tag-green">基本无影响</span></td><td>考官不知学校，纯看现场表现</td></tr>
+          <tr><td>体检</td><td><span class="tag tag-green">无影响</span></td><td>统一标准，只要身体健康</td></tr>
+          <tr><td>政审/考察</td><td><span class="tag tag-orange">轻微影响</span></td><td>极少数中央岗位有倾向，市县无影响</td></tr>
+          <tr><td>录用定岗</td><td><span class="tag tag-green">无影响</span></td><td>按成绩排名选岗，公开透明</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:12px;font-size:14px;text-align:center;color:var(--primary);font-weight:600">
+      💪 结论：考公是对民办本科生最公平的出路之一，7个环节中仅1个有轻微影响
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 备考计划 ════════════ -->
+<section id="plan">
+  <div class="section-title"><span class="icon">📖</span> 最佳备考计划（三阶段法）</div>
+  <p class="section-desc">多位上岸学霸验证的高效备考路线，总周期建议 6-8 个月</p>
+
+  <div class="grid-3">
+    <div class="phase-card phase-1">
+      <div class="phase-num">01</div>
+      <h3>🧱 基础阶段</h3>
+      <p style="font-size:14px;opacity:.85;margin-bottom:12px">⏱ 3-4个月 | 每天4-6小时</p>
+      <ul>
+        <li>系统学习行测六大模块基础知识</li>
+        <li>掌握申论写作框架与阅读方法</li>
+        <li>粉笔980系统班打底</li>
+        <li>不追求速度，重点理解概念</li>
+        <li>每周完成1套真题感知难度</li>
+        <li>建立各模块笔记知识体系</li>
+      </ul>
+    </div>
+
+    <div class="phase-card phase-2">
+      <div class="phase-num">02</div>
+      <h3>⚡ 强化阶段</h3>
+      <p style="font-size:14px;opacity:.85;margin-bottom:12px">⏱ 2-3个月 | 每天6-8小时</p>
+      <ul>
+        <li>分模块大量刷题（粉笔APP）</li>
+        <li>建立错题本，反复复盘总结</li>
+        <li>攻克薄弱模块，强化优势模块</li>
+        <li>开始积累时政热点素材</li>
+        <li>申论每周2-3篇完整练习</li>
+        <li>参加粉笔每周线上模考</li>
+      </ul>
+    </div>
+
+    <div class="phase-card phase-3">
+      <div class="phase-num">03</div>
+      <h3>🚀 冲刺阶段</h3>
+      <p style="font-size:14px;opacity:.85;margin-bottom:12px">⏱ 考前1个月 | 每天8-10小时</p>
+      <ul>
+        <li>全真模拟，严格卡时间</li>
+        <li>确定最优答题顺序策略</li>
+        <li>行测限时训练（120分钟/套）</li>
+        <li>申论大作文模板打磨</li>
+        <li>回归错题本，查漏补缺</li>
+        <li>调整作息，保持最佳状态</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:24px">
+    <h3>🎓 大学生专属备考时间线</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>时间段</th><th>阶段</th><th>核心任务</th><th>关键节点</th></tr></thead>
+        <tbody>
+          <tr><td>大二下学期</td><td><span class="tag tag-blue">启蒙期</span></td><td>了解公考，培养阅读习惯（半月谈/人民日报）</td><td>确定考公意向</td></tr>
+          <tr><td>大三上学期</td><td><span class="tag tag-blue">入门期</span></td><td>开始系统学习行测+申论基础课</td><td>粉笔980入手</td></tr>
+          <tr><td>大三寒假</td><td><span class="tag tag-orange">筑基期</span></td><td>集中刷题，模块化训练，初做真题</td><td>每天6h+</td></tr>
+          <tr><td>大三暑假</td><td><span class="tag tag-red">黄金期</span></td><td><b>7-9月强化练题，攻克薄弱，拉开差距</b></td><td>最关键阶段</td></tr>
+          <tr><td>大四上学期</td><td><span class="tag tag-red">冲刺期</span></td><td>10月国考冲刺，11月笔试；11-12月继续省考备考</td><td>10月国考报名</td></tr>
+          <tr><td>大四寒假</td><td><span class="tag tag-orange">双线期</span></td><td>国考面试准备 + 省考笔试冲刺</td><td>1月省考报名</td></tr>
+          <tr><td>大四下学期</td><td><span class="tag tag-green">收获期</span></td><td>省考笔试(3月)+面试(4月)+体检+政审</td><td>毕业前上岸</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 专属5个月冲刺路线 -->
+  <div class="card" style="margin-top:24px;border-left:4px solid var(--accent);background:linear-gradient(135deg,#fff5f5,#fff)">
+    <h3 style="color:var(--accent)">⚡ 你的专属：5个月极速冲刺路线（2026年6月-11月）</h3>
+    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px">
+      你现在处于<b style="color:var(--accent)">大三下期末</b>——距离国考笔试还有约5个月。以下是为期20周的精准计划：
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>阶段</th><th>时间</th><th>周数</th><th>核心任务</th><th>每天建议</th><th>里程碑</th></tr></thead>
+        <tbody>
+          <tr style="background:#fff5f5">
+            <td><span class="tag tag-red">📍 你在</span><br><b>现在→期末</b></td>
+            <td>6月中-6月底</td><td>2周</td>
+            <td>① 入手粉笔980系统班<br>② 完成行测六大模块入门认知<br>③ 测试1套真题，定位各模块水平</td>
+            <td>3-4h<br>（兼顾期末考）</td>
+            <td>确定备考决心<br>完成入门测试</td>
+          </tr>
+          <tr style="background:#fff8eb">
+            <td><b>暑期强化</b><br><span class="tag tag-red">关键！</span></td>
+            <td>7月-8月</td>
+            <td>8周</td>
+            <td>① 粉笔980倍速过完基础课（2x速度）<br>② 分模块刷题1500+题<br>③ 申论每周2篇练习<br>④ 参加粉笔每周模考</td>
+            <td><b>7-8h</b></td>
+            <td>行测模考稳定65+<br>申论能独立完成</td>
+          </tr>
+          <tr>
+            <td><b>强化拔高</b></td>
+            <td>9月</td>
+            <td>4周</td>
+            <td>① 资料分析+判断推理重点突破<br>② 真题套题训练（每周3套）<br>③ 错题本系统整理<br>④ 时政热点系统积累</td>
+            <td>7-8h</td>
+            <td>行测模考稳定72+</td>
+          </tr>
+          <tr>
+            <td><b>国考冲刺</b></td>
+            <td>10月-11月28日</td>
+            <td>8周</td>
+            <td>① 全真模拟（严格卡120分钟）<br>② 确定答题顺序策略<br>③ 申论大作文模板打磨<br>④ 10月15日国考报名选岗<br>⑤ 调整生物钟（上午行测下午申论）</td>
+            <td><b>9-10h</b></td>
+            <td>行测模考稳定78+<br>11月29日上考场</td>
+          </tr>
+          <tr style="background:#f0fdf4">
+            <td><b>省考延续</b></td>
+            <td>12月-3月</td>
+            <td>14周</td>
+            <td>① 复盘国考经验<br>② 继续刷题保持手感<br>③ 1月省考报名<br>④ 省考专项冲刺</td>
+            <td>5-6h</td>
+            <td>3月省考笔试</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout callout-warn" style="margin-top:12px">
+      <strong>🚨 三个不能妥协的底线：</strong><br>
+      ① 暑期不能回家躺平——去自习室/图书馆，每天打卡<br>
+      ② 每周必须参加粉笔模考——用排名倒逼自己进步<br>
+      ③ 申论不能"只看不写"——每周至少动笔2篇
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 行测攻略 ════════════ -->
+<section id="xince">
+  <div class="section-title"><span class="icon">📝</span> 行测专项攻略</div>
+  <p class="section-desc">行政职业能力测验 —— 120分钟/120题，分秒必争</p>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>🗣️ 言语理解（~40题）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px">目标正确率：<b>80%+</b></p>
+      <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+      <ul style="font-size:14px;margin-top:12px">
+        <li>积累高频成语和实词辨析</li>
+        <li>学会"找对应"——题干与选项逻辑映射</li>
+        <li>阅读理解抓主旨、关键词</li>
+        <li>语句排序用首尾句排除法</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧩 判断推理（~40题）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px">目标正确率：<b>80%+</b></p>
+      <div class="progress-bar"><div class="progress-fill" style="width:80%"></div></div>
+      <ul style="font-size:14px;margin-top:12px">
+        <li>图形推理：熟记常考点（对称/封闭/曲直/笔画）</li>
+        <li>定义判断：关键词匹配法</li>
+        <li>类比推理：词项关系分析</li>
+        <li>逻辑判断：加强削弱题是重点</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>📊 资料分析（~20题）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px">目标正确率：<b>90%+</b></p>
+      <div class="progress-bar"><div class="progress-fill" style="width:90%"></div></div>
+      <ul style="font-size:14px;margin-top:12px">
+        <li><b>性价比最高模块，提分最快</b></li>
+        <li>掌握速算技巧（截位直除/特征数字）</li>
+        <li>先看问题再找数据</li>
+        <li>练到25分钟/20题</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🔢 数量关系（~10-15题）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px">目标正确率：<b>50-60%</b></p>
+      <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
+      <ul style="font-size:14px;margin-top:12px">
+        <li>不建议死磕，选择性突破高频题型</li>
+        <li>工程问题/行程问题/容斥原理优先</li>
+        <li>学会科学蒙题策略</li>
+        <li>其余模块做完再来攻克</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🌐 常识判断（~20题）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px">目标正确率：<b>50-60%</b></p>
+      <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
+      <ul style="font-size:14px;margin-top:12px">
+        <li>重在平时碎片化积累</li>
+        <li>学习强国APP + 人民日报</li>
+        <li>时政/法律/文史/科技高频</li>
+        <li>不必苛求高分，7-8秒/题快速过</li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:#f59e0b">
+      <h3>⚡ 答题顺序策略（推荐）</h3>
+      <ol style="font-size:14px;margin-top:8px">
+        <li><b>资料分析</b>（头脑清醒，25分钟）</li>
+        <li><b>言语理解</b>（语感流畅，30分钟）</li>
+        <li><b>判断推理</b>（逻辑清晰，30分钟）</li>
+        <li><b>常识判断</b>（快速扫过，7分钟）</li>
+        <li><b>数量关系</b>（剩余时间，能做几题是几题）</li>
+      </ol>
+      <p style="font-size:13px;margin-top:8px;color:#92400e">💡 每人情况不同，通过模考找到最适合自己的顺序</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 申论攻略 ════════════ -->
+<section id="shenlun">
+  <div class="section-title"><span class="icon">✍️</span> 申论专项攻略</div>
+  <p class="section-desc">"材料为王" —— 答案尽量从给定材料中提炼，避免脱离材料空谈</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📐 四大核心题型</h3>
+      <div class="accordion">
+        <div class="acc-header" onclick="this.parentElement.classList.toggle('acc-open')">1. 归纳概括题（必考基础）</div>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p>训练关键词提取与分层技巧，做到"材料为王"——答案尽量从材料中提炼。注意分类归纳，用序号+小标题呈现。</p>
+        </div></div>
+      </div>
+      <div class="accordion" style="border-top:none">
+        <div class="acc-header" onclick="this.parentElement.classList.toggle('acc-open')">2. 提出对策题</div>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p>练习可行性分析，提出具体、可操作的措施。避免"加强宣传""完善制度"等空话，要具体到"谁+做什么+怎么+达到什么效果"。</p>
+        </div></div>
+      </div>
+      <div class="accordion" style="border-top:none">
+        <div class="acc-header" onclick="this.parentElement.classList.toggle('acc-open')">3. 综合分析题</div>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p>培养多角度分析思维，从"是什么-为什么-怎么办"三个层次展开。观点要明确，论证要有力，逻辑要清晰。</p>
+        </div></div>
+      </div>
+      <div class="accordion" style="border-top:none">
+        <div class="acc-header" onclick="this.parentElement.classList.toggle('acc-open')">4. 大作文（40分）</div>
+        <div class="acc-body"><div class="acc-body-inner">
+          <p>注重结构搭建（五段三分式）、标题优化、论点提炼。平时多练多写，<b>避免"眼高手低"</b>。开头要亮，分论点要有层次，结尾要有升华。</p>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔑 申论高分关键</h3>
+      <div style="font-size:14px">
+        <div class="callout callout-tip">
+          <strong>📌 材料为王：</strong>70%的答案来自材料，学会提炼而非自创
+        </div>
+        <div class="callout callout-gold">
+          <strong>📌 规范表达：</strong>每天阅读《人民日报》评论版、半月谈，积累官方用语
+        </div>
+        <div class="callout callout-warn">
+          <strong>📌 戒模板化：</strong>从题干和材料中深度思考命题人意图，培养独立思考
+        </div>
+        <div class="callout">
+          <strong>📌 多写多练：</strong>每周至少2-3篇完整申论练习，找人批改或对照参考答案
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h3>📰 每日申论素材积累（30分钟/天）</h3>
+    <div class="grid-3" style="margin-top:12px">
+      <div style="text-align:center;padding:16px">
+        <div style="font-size:32px;margin-bottom:8px">📱</div>
+        <div style="font-weight:600">学习强国APP</div>
+        <div style="font-size:13px;color:var(--text-secondary)">要闻+用典+每日金句</div>
+      </div>
+      <div style="text-align:center;padding:16px">
+        <div style="font-size:32px;margin-bottom:8px">📰</div>
+        <div style="font-weight:600">人民日报评论</div>
+        <div style="font-size:13px;color:var(--text-secondary)">人民时评+评论员文章</div>
+      </div>
+      <div style="text-align:center;padding:16px">
+        <div style="font-size:32px;margin-bottom:8px">📖</div>
+        <div style="font-weight:600">半月谈</div>
+        <div style="font-size:13px;color:var(--text-secondary)">时事政策+申论范文</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 面试技巧 ════════════ -->
+<section id="interview">
+  <div class="section-title"><span class="icon">🎤</span> 面试技巧全解</div>
+  <p class="section-desc">福建省考采用全省统一结构化面试 | 国考部分岗位采用无领导小组讨论</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🏛️ 结构化面试</h3>
+      <p style="font-size:14px;color:var(--text-secondary)">福建省考面试主要形式 | 1:3进面比例 | 合格线60分</p>
+
+      <div style="margin-top:12px">
+        <h4 style="font-size:14px;margin-bottom:8px">六大核心题型：</h4>
+        <div class="table-wrap">
+          <table>
+            <tr><th>题型</th><th>考查重点</th><th>答题框架</th></tr>
+            <tr><td>综合分析</td><td>社会热点分析能力</td><td>表态+原因/影响+对策</td></tr>
+            <tr><td>计划组织</td><td>活动策划执行能力</td><td>5W2H：目的→准备→实施→总结</td></tr>
+            <tr><td>应急应变</td><td>突发事件处理能力</td><td>冷静→处置→善后→反思</td></tr>
+            <tr><td>人际关系</td><td>沟通协调能力</td><td>换位思考→主动沟通→解决</td></tr>
+            <tr><td>岗位认知</td><td>职业匹配度</td><td>认知+能力+规划 三匹配</td></tr>
+            <tr><td>情景模拟</td><td>实际工作应对</td><td>角色代入→具体措施→效果</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>👥 无领导小组讨论</h3>
+      <p style="font-size:14px;color:var(--text-secondary)">国考部分岗位采用 | 6-8人一组 | 自行组织讨论</p>
+
+      <div style="margin-top:12px">
+        <h4 style="font-size:14px;margin-bottom:8px">五大角色定位：</h4>
+        <table>
+          <tr><td>🎯 组织领导者</td><td>推动讨论进程，协调团队</td></tr>
+          <tr><td>💡 思路引领者</td><td>搭建讨论框架，确定分析基准</td></tr>
+          <tr><td>⏰ 时间控制者</td><td>科学划分时间，提醒各阶段进度</td></tr>
+          <tr><td>📣 意见提供者</td><td>贡献创新观点和实质性内容</td></tr>
+          <tr><td>📋 总结陈述者</td><td>汇总共识，逻辑清晰总结汇报</td></tr>
+        </table>
+      </div>
+
+      <div class="callout callout-gold" style="margin-top:12px;font-size:13px">
+        <strong>核心原则：</strong>发言质量 > 发言次数，观点+理由结构，求同存异。避免"辩论思维"过重（过于强势=缺乏团队意识=扣分）
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h3>🎯 面试高分 Checklist</h3>
+    <div class="grid-3" style="margin-top:12px">
+      <div>
+        <h4 style="font-size:14px;color:var(--green);margin-bottom:6px">✅ 加分项</h4>
+        <ul style="font-size:13px">
+          <li>着装得体、精神饱满</li>
+          <li>逻辑条理清晰，总-分-总结构</li>
+          <li>与考官眼神交流，自然大方</li>
+          <li>时间把控精准，不超时不敷衍</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:14px;color:var(--accent);margin-bottom:6px">❌ 扣分项</h4>
+        <ul style="font-size:13px">
+          <li>走姿散漫僵硬、跷二郎腿</li>
+          <li>抖腿、挠头、摸鼻子、转笔</li>
+          <li>答题背模板、缺乏真诚感</li>
+          <li>无领导中过于强势、辩论思维</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:14px;color:var(--primary);margin-bottom:6px">📋 面试流程</h4>
+        <ul style="font-size:13px">
+          <li>报到抽签 → 候考</li>
+          <li>进入考场 → 答题</li>
+          <li>退场 → 成绩确认</li>
+          <li>总成绩 = 笔试÷2×50% + 面试×50%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 资料推荐 ════════════ -->
+<section id="resources">
+  <div class="section-title"><span class="icon">📚</span> 备考资料与网课推荐</div>
+  <p class="section-desc">选对资料，事半功倍 —— 精选1-2套核心资料深度学习</p>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📱 必备APP</h3>
+      <table>
+        <tr><td style="width:100px"><b>粉笔APP</b></td><td>刷题+模考+课程一站式，核心工具</td></tr>
+        <tr><td><b>学习强国</b></td><td>时政热点+金句积累，每日必刷</td></tr>
+        <tr><td><b>人民日报</b></td><td>评论版精读，申论规范表达来源</td></tr>
+        <tr><td><b>半月谈</b></td><td>申论范文+时政深度解读</td></tr>
+        <tr><td><b>B站</b></td><td>免费名师专项课（搜索"行测""申论"）</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>🎓 推荐网课体系</h3>
+      <table>
+        <tr><td style="width:100px"><b>粉笔980</b></td><td>系统班，1000+课时，零基础入门首选 <span class="tag tag-green">推荐</span></td></tr>
+        <tr><td><b>粉笔AI刷题班</b></td><td>240万题库，AI诊断薄弱点，精准刷题</td></tr>
+        <tr><td><b>粉笔线下基地班</b></td><td>封闭集训，适合自制力较弱的同学</td></tr>
+        <tr><td><b>华图模块宝典</b></td><td>经典教材，分模块深度讲解</td></tr>
+        <tr><td><b>中公真题汇编</b></td><td>历年真题+详细解析，冲刺必备</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout callout-warn" style="margin-top:16px">
+    <strong>⚠️ 避坑提醒：</strong>
+    不要囤积大量资料！精选1-2套核心资料深度学习，比泛泛浏览10套资料有效得多。
+    <b>粉笔+真题</b> 是最经典组合。华图教育2026年315期间被曝存在退费难问题，报名线下班需谨慎。
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <h3>🔗 重要官方网址</h3>
+    <div class="table-wrap">
+      <table>
+        <tr><td>国家公务员局（国考报名）</td><td><a href="http://bm.scs.gov.cn" target="_blank">bm.scs.gov.cn</a></td></tr>
+        <tr><td>福建考录网（省考报名）</td><td><a href="http://gwykl.fujian.gov.cn" target="_blank">gwykl.fujian.gov.cn</a></td></tr>
+        <tr><td>国家大学生就业服务平台</td><td><a href="https://www.ncss.cn" target="_blank">ncss.cn</a></td></tr>
+        <tr><td>福建省人社厅</td><td><a href="https://rst.fujian.gov.cn" target="_blank">rst.fujian.gov.cn</a></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ ⚡ 核心要点速记 ════════════ -->
+<section id="summary" style="background:#fff;border-radius:var(--radius);padding:40px 32px">
+  <div class="section-title"><span class="icon">⚡</span> 福建大学生考公核心要点</div>
+  <div class="grid-2" style="margin-top:24px">
+    <div class="callout callout-tip">
+      <strong>🎯 选岗第一定律：</strong>岗位选择 > 备考努力。优先"限2026届+限专业+限性别"三限组合，避开三不限。
+    </div>
+    <div class="callout callout-gold">
+      <strong>🎓 应届生身份是最大王牌：</strong>67%国考岗位限应届。三方协议务必面试通过后再签，否则丧失应届资格。
+    </div>
+    <div class="callout">
+      <strong>📖 大三暑假是黄金期：</strong>7-9月是拉开差距的关键阶段。每天6-8小时系统训练，开学后你会感谢暑假的自己。
+    </div>
+    <div class="callout callout-warn">
+      <strong>🏃 国考+省考两手抓：</strong>国考11月→省考3月，时间完全不冲突。国考是最好的实战演练。
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 每日必做清单 ════════════ -->
+<section id="daily">
+  <div class="section-title"><span class="icon">✅</span> 你的每日必做清单</div>
+  <p class="section-desc">每天坚持这6件事，5个月后你会感谢现在的自己</p>
+  <div class="grid-3">
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">🌅</div>
+      <h3>早晨（30分钟）</h3>
+      <ul style="list-style:none;font-size:14px;text-align:left;margin-top:12px">
+        <li><input type="checkbox" id="chk1" onchange="saveChecks()"> 学习强国APP刷15分钟时政</li>
+        <li><input type="checkbox" id="chk2" onchange="saveChecks()"> 人民日报评论精读1篇</li>
+        <li><input type="checkbox" id="chk3" onchange="saveChecks()"> 抄写5条申论金句</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">☀️</div>
+      <h3>白天（4-6小时）</h3>
+      <ul style="list-style:none;font-size:14px;text-align:left;margin-top:12px">
+        <li><input type="checkbox" id="chk4" onchange="saveChecks()"> 行测专项刷题50题+复盘</li>
+        <li><input type="checkbox" id="chk5" onchange="saveChecks()"> 资料分析限时训练1组</li>
+        <li><input type="checkbox" id="chk6" onchange="saveChecks()"> 错题本更新+回顾</li>
+      </ul>
+    </div>
+    <div class="card" style="text-align:center">
+      <div style="font-size:36px;margin-bottom:8px">🌙</div>
+      <h3>晚上（1-2小时）</h3>
+      <ul style="list-style:none;font-size:14px;text-align:left;margin-top:12px">
+        <li><input type="checkbox" id="chk7" onchange="saveChecks()"> 申论动笔写1道小题</li>
+        <li><input type="checkbox" id="chk8" onchange="saveChecks()"> 第二天学习计划制定</li>
+        <li><input type="checkbox" id="chk9" onchange="saveChecks()"> 11:30前睡觉保证精力</li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:16px">
+    <button onclick="resetChecks()" style="padding:10px 24px;background:var(--primary);color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:14px;font-weight:600">🔄 重置今日打卡</button>
+    <span id="check-status" style="margin-left:16px;font-size:14px;color:var(--text-secondary)"></span>
+  </div>
+</section>
+</div>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <p>📅 更新于 2026年6月 · 数据来源：国家公务员局、福建省公务员局、各培训机构公开数据</p>
+  <p style="margin-top:4px;opacity:.6">本页面仅供参考，最新政策以官方公告为准。祝每一位福建学子金榜题名！🎉</p>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="回到顶部">↑</button>
+
+<!-- ════════════ JAVASCRIPT ════════════ -->
+<script>
+  // ── Highlight active nav link on scroll ──
+  const sections = document.querySelectorAll('section[id], div[id].hero');
+  const navLinks = document.querySelectorAll('.topnav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      const top = s.offsetTop - 100;
+      if (scrollY >= top) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // ── Back to top button ──
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('show', scrollY > 600);
+  });
+
+  // ── Smooth scroll for nav links ──
+  document.querySelectorAll('.topnav a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // ── Animate progress bars on scroll ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fills = entry.target.querySelectorAll('.progress-fill');
+        fills.forEach(f => {
+          const w = f.style.width;
+          f.style.width = '0%';
+          requestAnimationFrame(() => { f.style.width = w; });
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.card').forEach(card => {
+    if (card.querySelector('.progress-bar')) observer.observe(card);
+  });
+
+  // ── Real-time Countdown ──
+  function updateCountdown() {
+    const now = new Date();
+    // 2027国考笔试: 预计2026年11月29日
+    const guokao = new Date(2026, 10, 29, 9, 0, 0); // Nov 29, 2026 9:00 AM
+    // 2027福建省考笔试: 预计2027年3月14日
+    const shengkao = new Date(2027, 2, 14, 9, 0, 0); // Mar 14, 2027 9:00 AM
+    // 暑假开始: 2026年7月1日
+    const summer = new Date(2026, 6, 1, 0, 0, 0); // Jul 1, 2026
+
+    const formatDays = (target) => {
+      const diff = target - now;
+      if (diff < 0) return '已过';
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      if (days > 100) return days + '天';
+      return days + '天' + hours + '时';
+    };
+
+    const elGK = document.getElementById('cd-gk-days');
+    const elSK = document.getElementById('cd-shengkao-days');
+    const elSM = document.getElementById('cd-summer-days');
+    if (elGK) elGK.textContent = formatDays(guokao);
+    if (elSK) elSK.textContent = formatDays(shengkao);
+    if (elSM) elSM.textContent = formatDays(summer);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000); // 每分钟更新
+
+  // ── Daily Checklist Persistence ──
+  function saveChecks() {
+    const checks = {};
+    for (let i = 1; i <= 9; i++) {
+      const el = document.getElementById('chk' + i);
+      if (el) checks['chk' + i] = el.checked;
+    }
+    const today = new Date().toDateString();
+    localStorage.setItem('kaogong_checks_' + today, JSON.stringify(checks));
+    updateCheckStatus();
+  }
+
+  function loadChecks() {
+    const today = new Date().toDateString();
+    const saved = localStorage.getItem('kaogong_checks_' + today);
+    if (saved) {
+      const checks = JSON.parse(saved);
+      for (const [id, checked] of Object.entries(checks)) {
+        const el = document.getElementById(id);
+        if (el) el.checked = checked;
+      }
+    }
+    updateCheckStatus();
+  }
+
+  function resetChecks() {
+    for (let i = 1; i <= 9; i++) {
+      const el = document.getElementById('chk' + i);
+      if (el) el.checked = false;
+    }
+    saveChecks();
+  }
+
+  function updateCheckStatus() {
+    const statusEl = document.getElementById('check-status');
+    if (!statusEl) return;
+    let done = 0, total = 0;
+    for (let i = 1; i <= 9; i++) {
+      const el = document.getElementById('chk' + i);
+      if (el) { total++; if (el.checked) done++; }
+    }
+    if (done === 0) statusEl.textContent = '今天还没开始，加油！💪';
+    else if (done < total) statusEl.textContent = '已完成 ' + done + '/' + total + '，继续努力！🔥';
+    else statusEl.textContent = '全部完成！你今天太棒了！🎉';
+  }
+
+  loadChecks();
+
+  // ── Print current year ──
+  console.log('%c🎓 考公上岸全攻略 %c| %c福建大学生专属 %c| %c2026最新版',
+    'font-size:18px;font-weight:bold;color:#1a56db',
+    '', 'color:#e02424', '', 'color:#059669');
+  console.log('%c💪 功不唐捐，玉汝于成 —— 祝早日上岸！', 'font-size:14px;color:#f59e0b');
+</script>
+</body>
+</html>
